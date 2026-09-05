@@ -1,9 +1,75 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Olá, Mundo! Este é o Projeto Exercicio4.");
+        List<int> numeros = new List<int>();
+
+        Console.WriteLine("Insira uma lista de números e digite 0 quando terminar.");
+
+        int numero;
+
+        do
+        {
+            Console.Write("Insira o número: ");
+            numero = int.Parse(Console.ReadLine());
+
+            if (numero != 0)
+            {
+                numeros.Add(numero);
+            }
+        } while (numero != 0);
+
+        int soma = 0;
+        foreach (int n in numeros)
+        {
+            soma += n;
+        }
+
+        double media = (double)soma / numeros.Count;
+
+        int maior = numeros[0];
+        foreach (int n in numeros)
+        {
+            if (n > maior)
+            {
+                maior = n;
+            }
+        }
+
+        int? menorPositivo = null;
+        foreach (int n in numeros)
+        {
+            if (n > 0)
+            {
+                if (menorPositivo == null || n < menorPositivo)
+                {
+                    menorPositivo = n;
+                }
+            }
+        }
+
+        numeros.Sort();
+
+        Console.WriteLine($"A soma é: {soma}");
+        Console.WriteLine($"A média é: {media}");
+        Console.WriteLine($"O maior número é: {maior}");
+
+        if (menorPositivo != null)
+        {
+            Console.WriteLine($"O menor número positivo é: {menorPositivo}");
+        }
+        else
+        {
+            Console.WriteLine("Não há números positivos na lista.");
+        }
+
+        Console.WriteLine("A lista reordenada é:");
+        foreach (int n in numeros)
+        {
+            Console.WriteLine(n);
+        }
     }
 }
