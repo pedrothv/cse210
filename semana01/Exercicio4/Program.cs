@@ -25,10 +25,10 @@ class Program
         int soma = 0;
         foreach (int n in numeros)
         {
-            soma += n;
+            soma = soma + n;
         }
 
-        double media = (double)soma / numeros.Count;
+        double media = soma * 1.0 / numeros.Count;
 
         int maior = numeros[0];
         foreach (int n in numeros)
@@ -39,37 +39,5 @@ class Program
             }
         }
 
-        int? menorPositivo = null;
-        foreach (int n in numeros)
-        {
-            if (n > 0)
-            {
-                if (menorPositivo == null || n < menorPositivo)
-                {
-                    menorPositivo = n;
-                }
-            }
-        }
-
-        numeros.Sort();
-
-        Console.WriteLine($"A soma é: {soma}");
-        Console.WriteLine($"A média é: {media}");
-        Console.WriteLine($"O maior número é: {maior}");
-
-        if (menorPositivo != null)
-        {
-            Console.WriteLine($"O menor número positivo é: {menorPositivo}");
-        }
-        else
-        {
-            Console.WriteLine("Não há números positivos na lista.");
-        }
-
-        Console.WriteLine("A lista reordenada é:");
-        foreach (int n in numeros)
-        {
-            Console.WriteLine(n);
-        }
-    }
-}
+        bool encontrouPositivo = false;
+        int
