@@ -4,15 +4,14 @@ public class Ciclismo : Atividade
 {
     private double _velocidade;
 
-    public Ciclismo(DateTime data, int minutos, double velocidade)
-        : base(data, minutos)
+    public Ciclismo(string data, int minutos, double velocidade) : base("Ciclismo", data, minutos)
     {
         _velocidade = velocidade;
     }
 
     public override double ObterDistancia()
     {
-        return (_velocidade * ObterMinutos()) / 60;
+        return _velocidade * ObterMinutos() / 60;
     }
 
     public override double ObterVelocidade()

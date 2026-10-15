@@ -4,15 +4,14 @@ public class Natacao : Atividade
 {
     private int _voltas;
 
-    public Natacao(DateTime data, int minutos, int voltas)
-        : base(data, minutos)
+    public Natacao(string data, int minutos, int voltas) : base("Natação", data, minutos)
     {
         _voltas = voltas;
     }
 
     public override double ObterDistancia()
     {
-        return (_voltas * 50) / 1000.0;
+        return _voltas * 50.0 / 1000;
     }
 
     public override double ObterVelocidade()

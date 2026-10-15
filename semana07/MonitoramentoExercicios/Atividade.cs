@@ -2,18 +2,15 @@ using System;
 
 public abstract class Atividade
 {
-    private DateTime _data;
+    private string _nome;
+    private string _data;
     private int _minutos;
 
-    public Atividade(DateTime data, int minutos)
+    public Atividade(string nome, string data, int minutos)
     {
+        _nome = nome;
         _data = data;
         _minutos = minutos;
-    }
-
-    public DateTime ObterData()
-    {
-        return _data;
     }
 
     public int ObterMinutos()
@@ -27,8 +24,12 @@ public abstract class Atividade
 
     public abstract double ObterRitmo();
 
-    public virtual string ObterResumo()
+    public string ObterResumo()
     {
-        return $"{_data:dd MMM yyyy} {GetType().Name} ({_minutos} min) - Distância {ObterDistancia():0.0} km, Velocidade {ObterVelocidade():0.0} km/h, Ritmo {ObterRitmo():0.0} min por km";
+        double distancia = ObterDistancia();
+        double velocidade = ObterVelocidade();
+        double ritmo = ObterRitmo();
+
+        return $"{_data} {_nome} ({_minutos} min) - Distância {distancia:F1} km, Velocidade: {velocidade:F1} km/h, Ritmo: {ritmo:F2} min por km";
     }
 }

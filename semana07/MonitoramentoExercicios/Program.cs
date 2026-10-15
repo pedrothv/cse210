@@ -7,23 +7,14 @@ class Program
     {
         List<Atividade> atividades = new List<Atividade>();
 
-        atividades.Add(
-            new Corrida(
-                new DateTime(2022, 11, 3),
-                30,
-                4.8));
+        Corrida corrida = new Corrida("03 Nov 2022", 30, 4.8);
+        atividades.Add(corrida);
 
-        atividades.Add(
-            new Ciclismo(
-                new DateTime(2022, 11, 3),
-                45,
-                20));
+        Ciclismo ciclismo = new Ciclismo("05 Nov 2022", 45, 20.0);
+        atividades.Add(ciclismo);
 
-        atividades.Add(
-            new Natacao(
-                new DateTime(2022, 11, 3),
-                40,
-                30));
+        Natacao natacao = new Natacao("07 Nov 2022", 45, 30);
+        atividades.Add(natacao);
 
         foreach (Atividade atividade in atividades)
         {

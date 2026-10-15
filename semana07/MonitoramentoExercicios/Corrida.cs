@@ -4,8 +4,7 @@ public class Corrida : Atividade
 {
     private double _distancia;
 
-    public Corrida(DateTime data, int minutos, double distancia)
-        : base(data, minutos)
+    public Corrida(string data, int minutos, double distancia) : base("Corrida", data, minutos)
     {
         _distancia = distancia;
     }
