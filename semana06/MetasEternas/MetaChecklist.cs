@@ -12,6 +12,14 @@ public class MetaChecklist : Meta
         _bonus = bonus;
     }
 
+    public MetaChecklist(string nome, string descricao, int pontos, int quantidadeNecessaria, int bonus, int quantidadeAtual)
+        : base(nome, descricao, pontos)
+    {
+        _quantidadeAtual = quantidadeAtual;
+        _quantidadeNecessaria = quantidadeNecessaria;
+        _bonus = bonus;
+    }
+
     public override int RegistrarEvento()
     {
         if (_quantidadeAtual >= _quantidadeNecessaria)

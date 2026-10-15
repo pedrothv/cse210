@@ -8,6 +8,12 @@ public class MetaSimples : Meta
         _estaCompleta = false;
     }
 
+    public MetaSimples(string nome, string descricao, int pontos, bool estaCompleta)
+        : base(nome, descricao, pontos)
+    {
+        _estaCompleta = estaCompleta;
+    }
+
     public override int RegistrarEvento()
     {
         if (_estaCompleta)

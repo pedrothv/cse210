@@ -146,7 +146,8 @@ public class GerenciadorDeMetas
                 _metas.Add(new MetaSimples(
                     partes[1],
                     partes[2],
-                    int.Parse(partes[3])));
+                    int.Parse(partes[3]),
+                    bool.Parse(partes[4])));
             }
 
             if (partes[0] == "MetaEterna")
@@ -164,7 +165,8 @@ public class GerenciadorDeMetas
                     partes[2],
                     int.Parse(partes[3]),
                     int.Parse(partes[5]),
-                    int.Parse(partes[6])));
+                    int.Parse(partes[6]),
+                    int.Parse(partes[4])));
             }
         }
     }
